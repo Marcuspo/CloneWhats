@@ -1,8 +1,4 @@
 import React from "React";
-import { Container } from "native-base";
+import FormLogin from "./components/FormLogin";
 
-const App = () => {
-  return <Container />;
-};
-
-export default App;
+export default props => <FormLogin />;
