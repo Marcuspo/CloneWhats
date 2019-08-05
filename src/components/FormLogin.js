@@ -1,4 +1,4 @@
-import React from "React";
+import React, { Fragment } from "React";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 
 export default props => (
@@ -6,13 +6,14 @@ export default props => (
     <View style={styles.topoNome}>
       <Text style={styles.nameStyle}>Whatapp Clone</Text>
     </View>
-    <View style={{ flex: 2 }}>
+    <View style={styles.inputes}>
       <TextInput
         style={styles.styleInput}
         keyboardType="email-address"
         placeholder="E-mail"
-        returnKeyType="next"
       />
+    </View>
+    <View style={{ flex: 2, paddingTop: 15 }}>
       <TextInput
         style={styles.styleInput}
         returnKeyType="done"
@@ -48,7 +49,9 @@ const styles = StyleSheet.create({
   },
   styleInput: {
     fontSize: 20,
-    height: 45
+    height: 45,
+    borderColor: "#115E54",
+    borderWidth: 1
   },
   styleCadastro: {
     fontSize: 15,
