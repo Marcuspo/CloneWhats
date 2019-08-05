@@ -7,8 +7,17 @@ export default props => (
       <Text style={styles.nameStyle}>Whatapp Clone</Text>
     </View>
     <View style={{ flex: 2 }}>
-      <TextInput style={styles.styleInput} placeholder="E-mail" />
-      <TextInput style={styles.styleInput} placeholder="Senha" />
+      <TextInput
+        style={styles.styleInput}
+        keyboardType="email-address"
+        placeholder="E-mail"
+        returnKeyType="next"
+      />
+      <TextInput
+        style={styles.styleInput}
+        returnKeyType="done"
+        placeholder="Senha"
+      />
       <View style={styles.topoNome}>
         <Text style={styles.styleCadastro}>
           Ainda não tem cadastro? Cadastre-se
