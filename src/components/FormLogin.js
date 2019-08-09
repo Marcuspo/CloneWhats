@@ -1,5 +1,5 @@
-import React, { Fragment } from "React";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import React from "React";
+import { View, Text, Button, StyleSheet, Image } from "react-native";
 import {
   Body,
   Title,
@@ -11,6 +11,8 @@ import {
   Item
 } from "native-base";
 
+import logo from "../images/logo.png";
+
 export default props => (
   <Container>
     <Header androidStatusBarColor="#115E54" style={styles.header}>
@@ -20,7 +22,12 @@ export default props => (
       </Body>
     </Header>
     <View style={styles.geral}>
-      <View style={styles.topoNome} />
+      <View style={styles.topoNome}>
+        <Image
+          source={logo}
+          style={{ marginTop: 15, height: 150, width: 150 }}
+        />
+      </View>
       <View style={styles.inputes}>
         <Item>
           <Icon name="email" type="MaterialCommunityIcons" />
@@ -77,12 +84,16 @@ const styles = StyleSheet.create({
     fontSize: 20,
     height: 45,
     borderBottomColor: "#000000",
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    marginTop: 25
   },
   styleCadastro: {
     fontSize: 15,
     height: 45,
     fontStyle: "italic",
     fontWeight: "bold"
+  },
+  inputes: {
+    marginTop: 45
   }
 });
