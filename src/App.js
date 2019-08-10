@@ -1,5 +1,4 @@
 import React from "React";
-import FormLogin from "./components/FormLogin";
-import FormCadastro from "./components/FormCadastro";
+import Routes from "./Routes";
 
-export default props => <FormLogin />;
+export default props => <Routes />;

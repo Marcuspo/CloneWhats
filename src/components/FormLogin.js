@@ -1,5 +1,13 @@
 import React from "React";
-import { View, Text, Button, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  Image,
+  TouchableHighlight
+} from "react-native";
+import { Actions } from "react-native-router-flux";
 import {
   Body,
   Title,
@@ -48,9 +56,11 @@ export default props => (
           />
         </Item>
         <View style={styles.topoNome}>
-          <Text style={styles.styleCadastro}>
-            Ainda não tem cadastro? Cadastre-se
-          </Text>
+          <TouchableHighlight onPress={() => Actions.formCadastro()}>
+            <Text style={styles.styleCadastro}>
+              Ainda não tem cadastro? Cadastre-se
+            </Text>
+          </TouchableHighlight>
         </View>
       </View>
       <View style={{ flex: 2 }}>
