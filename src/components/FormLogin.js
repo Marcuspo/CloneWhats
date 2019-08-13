@@ -19,6 +19,7 @@ import {
 } from "native-base";
 import AutenticacaoReducer from "../reducers/AutenticacaoReducer";
 import { connect } from "react-redux";
+import { modificaEmail } from "../actions/AutenticacaoActions";
 
 const FormLogin = props => (
   <Container>
@@ -34,6 +35,7 @@ const FormLogin = props => (
         <Item>
           <Icon name="email" type="MaterialCommunityIcons" />
           <Input
+            onChangeText={texto => props.modificaEmail(texto)}
             value={props.email}
             style={styles.styleInput}
             keyboardType="email-address"
@@ -110,5 +112,5 @@ const styles = StyleSheet.create({
 
 export default connect(
   mapStateToProps,
-  null
+  { modificaEmail }
 )(FormLogin);
