@@ -8,11 +8,7 @@ export default props => (
   <Router>
     <Stack key="root">
       <Scene key="formLogin" component={FormLogin} hideNavBar />
-      <Scene
-        key="formCadastro"
-        component={FormCadastro}
-        navTransparent={true}
-      />
+      <Scene key="formCadastro" component={FormCadastro} />
     </Stack>
   </Router>
 );
