@@ -4,7 +4,6 @@ import {
   Text,
   Button,
   StyleSheet,
-  Image,
   TouchableHighlight
 } from "react-native";
 import { Actions } from "react-native-router-flux";
@@ -18,8 +17,10 @@ import {
   Input,
   Item
 } from "native-base";
+import AutenticacaoReducer from "../reducers/AutenticacaoReducer";
+import { connect } from "react-redux";
 
-export default props => (
+const FormLogin = props => (
   <Container>
     <Header androidStatusBarColor="#115E54" style={styles.header}>
       <Left />
@@ -33,6 +34,7 @@ export default props => (
         <Item>
           <Icon name="email" type="MaterialCommunityIcons" />
           <Input
+            value={props.email}
             style={styles.styleInput}
             keyboardType="email-address"
             placeholder="E-mail"
@@ -43,6 +45,7 @@ export default props => (
         <Item>
           <Icon name="textbox-password" type="MaterialCommunityIcons" />
           <Input
+            value={props.senha}
             style={styles.styleInput}
             returnKeyType="done"
             placeholder="Senha"
@@ -62,6 +65,11 @@ export default props => (
     </View>
   </Container>
 );
+
+const mapStateToProps = state => ({
+  email: state.AutenticacaoReducer.email,
+  senha: state.AutenticacaoReducer.senha
+});
 
 const styles = StyleSheet.create({
   header: {
@@ -99,3 +107,8 @@ const styles = StyleSheet.create({
     marginTop: 45
   }
 });
+
+export default connect(
+  mapStateToProps,
+  null
+)(FormLogin);
