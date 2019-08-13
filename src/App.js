@@ -1,4 +1,12 @@
 import React from "React";
-import Routes from "./Routes";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
-export default props => <Routes />;
+import Routes from "./Routes";
+import reducers from "./reducers/index.js";
+
+export default props => (
+  <Provider store={createStore(reducers)}>
+    <Routes />
+  </Provider>
+);

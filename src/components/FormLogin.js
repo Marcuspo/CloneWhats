@@ -19,8 +19,6 @@ import {
   Item
 } from "native-base";
 
-import logo from "../images/logo.png";
-
 export default props => (
   <Container>
     <Header androidStatusBarColor="#115E54" style={styles.header}>
@@ -30,12 +28,7 @@ export default props => (
       </Body>
     </Header>
     <View style={styles.geral}>
-      <View style={styles.topoNome}>
-        <Image
-          source={logo}
-          style={{ marginTop: 15, height: 150, width: 150 }}
-        />
-      </View>
+      <View style={styles.topoNome} />
       <View style={styles.inputes}>
         <Item>
           <Icon name="email" type="MaterialCommunityIcons" />
@@ -80,7 +73,6 @@ const styles = StyleSheet.create({
     padding: 10
   },
   topoNome: {
-    flex: 1,
     justifyContent: "center",
     alignItems: "center"
   },
