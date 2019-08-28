@@ -61,7 +61,7 @@ const FormLogin = props => (
           </TouchableHighlight>
         </View>
       </View>
-      <View style={{ flex: 2 }}>
+      <View style={{ flex: 1 }}>
         <Button title="Acessar" color="#115E54" onPress={() => false} />
       </View>
     </View>
