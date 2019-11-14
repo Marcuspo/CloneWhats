@@ -57,7 +57,7 @@ const FormLogin = props => (
         <View style={styles.topoNome}>
           <TouchableHighlight onPress={() => Actions.formCadastro()}>
             <Text style={styles.styleCadastro}>
-              Ainda não tem cadastro? Cadastre-se
+              Ainda não tem cadastro? Cadastre-se aqui
             </Text>
           </TouchableHighlight>
         </View>
