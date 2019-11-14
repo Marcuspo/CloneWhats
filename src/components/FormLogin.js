@@ -19,7 +19,7 @@ import {
 } from "native-base";
 import AutenticacaoReducer from "../reducers/AutenticacaoReducer";
 import { connect } from "react-redux";
-import { modificaEmail } from "../actions/AutenticacaoActions";
+import { modificaEmail, modificaSenha } from "../actions/AutenticacaoActions";
 
 const FormLogin = props => (
   <Container>
@@ -47,6 +47,7 @@ const FormLogin = props => (
         <Item>
           <Icon name="textbox-password" type="MaterialCommunityIcons" />
           <Input
+            onChangeText={texto => props.modificaSenha(texto)}
             value={props.senha}
             style={styles.styleInput}
             returnKeyType="done"
@@ -110,7 +111,6 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(
-  mapStateToProps,
-  { modificaEmail }
-)(FormLogin);
+export default connect(mapStateToProps, { modificaEmail, modificaSenha })(
+  FormLogin
+);
