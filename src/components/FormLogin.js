@@ -40,6 +40,7 @@ const FormLogin = props => (
             style={styles.styleInput}
             keyboardType="email-address"
             placeholder="E-mail"
+            placeholderTextColor="green"
           />
         </Item>
       </View>
@@ -53,6 +54,7 @@ const FormLogin = props => (
             style={styles.styleInput}
             returnKeyType="done"
             placeholder="Senha"
+            placeholderTextColor="green"
           />
         </Item>
         <View style={styles.topoNome}>
@@ -99,13 +101,15 @@ const styles = StyleSheet.create({
     height: 45,
     borderBottomColor: "#000000",
     borderBottomWidth: 1,
-    marginTop: 25
+    marginTop: 25,
+    color: "green"
   },
   styleCadastro: {
     fontSize: 15,
     height: 45,
     fontStyle: "italic",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: "green"
   },
   inputes: {
     marginTop: 45
