@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  name: "Marcus",
+  nome: "Marcus",
   email: "marcusporama@gmail.com",
   senha: "12345"
 };
@@ -16,6 +16,9 @@ export default (state = INITIAL_STATE, action) => {
       ...state,
       senha: action.payload
     };
+  }
+  if (action.type == "modifica_nome") {
+    return { ...state, nome: action.payload };
   }
   return state;
 };

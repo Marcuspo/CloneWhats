@@ -1,5 +1,10 @@
 import React from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
+import {
+  modificaEmail,
+  modificaSenha,
+  modificaNome
+} from "../actions/AutenticacaoActions";
 import AutenticacaoReducer from "../reducers/AutenticacaoReducer";
 import { connect } from "react-redux";
 
@@ -10,16 +15,20 @@ const FormCadastro = props => (
         value={props.nome}
         placeholder="Nome"
         style={styles.inputesIn}
+        onChangeText={texto => props.modificaNome(texto)}
       />
       <TextInput
         value={props.email}
         placeholder="E-mail"
         style={styles.inputesIn}
+        onChangeText={texto => props.modificaEmail(texto)}
       />
       <TextInput
         value={props.senha}
         placeholder="Senha"
         style={styles.inputesIn}
+        onChangeText={texto => props.modificaSenha(texto)}
+        secureTextEntry
       />
     </View>
     <View style={styles.button}>
@@ -54,7 +63,8 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(
-  mapStateToProps,
-  null
-)(FormCadastro);
+export default connect(mapStateToProps, {
+  modificaEmail,
+  modificaSenha,
+  modificaNome
+})(FormCadastro);

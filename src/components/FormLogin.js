@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 import {
   View,
   Text,
@@ -47,6 +47,7 @@ const FormLogin = props => (
         <Item>
           <Icon name="textbox-password" type="MaterialCommunityIcons" />
           <Input
+            secureTextEntry
             onChangeText={texto => props.modificaSenha(texto)}
             value={props.senha}
             style={styles.styleInput}
