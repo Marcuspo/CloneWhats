@@ -3,12 +3,21 @@ import { View, TextInput, Button, StyleSheet } from "react-native";
 import {
   modificaEmail,
   modificaSenha,
-  modificaNome
+  modificaNome,
+  cadastraUsuario
 } from "../actions/AutenticacaoActions";
 import AutenticacaoReducer from "../reducers/AutenticacaoReducer";
 import { connect } from "react-redux";
 
 class FormCadastro extends Component {
+
+  _cadastraUsuario(){
+
+    const { nome, email, senha } = this.props;
+
+   this.props.cadastraUsuario({ nome, email, senha });
+  }
+
   render() {
     return (
   <View style={styles.geral}>
@@ -37,7 +46,7 @@ class FormCadastro extends Component {
       />
     </View>
     <View style={styles.button}>
-      <Button title="Cadastrar" color="#115E54" onPress={() => false} />
+      <Button title="Cadastrar" color="#115E54" onPress={() => this._cadastraUsuario()} />
     </View>
   </View>
     );
@@ -75,5 +84,6 @@ const styles = StyleSheet.create({
 export default connect(mapStateToProps, {
   modificaEmail,
   modificaSenha,
-  modificaNome
+  modificaNome,
+  cadastraUsuario
 })(FormCadastro);

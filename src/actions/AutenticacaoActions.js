@@ -18,3 +18,9 @@ export const modificaNome = texto => {
     payload: texto
   };
 };
+
+export const cadastraUsuario = ({ nome, email, senha }) => {
+  return {
+    action: "teste"
+  };
+};
