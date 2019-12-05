@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { View, TextInput, Button, StyleSheet } from "react-native";
 import {
   modificaEmail,
@@ -8,28 +8,30 @@ import {
 import AutenticacaoReducer from "../reducers/AutenticacaoReducer";
 import { connect } from "react-redux";
 
-const FormCadastro = props => (
+class FormCadastro extends Component {
+  render() {
+    return (
   <View style={styles.geral}>
     <View style={styles.inputes}>
       <TextInput
-        value={props.nome}
+        value={this.props.nome}
         placeholder="Nome"
         style={styles.inputesIn}
-        onChangeText={texto => props.modificaNome(texto)}
+        onChangeText={texto => this.props.modificaNome(texto)}
         placeholderTextColor="green"
       />
       <TextInput
-        value={props.email}
+        value={this.props.email}
         placeholder="E-mail"
         style={styles.inputesIn}
-        onChangeText={texto => props.modificaEmail(texto)}
+        onChangeText={texto => this.props.modificaEmail(texto)}
         placeholderTextColor="green"
       />
       <TextInput
-        value={props.senha}
+        value={this.props.senha}
         placeholder="Senha"
         style={styles.inputesIn}
-        onChangeText={texto => props.modificaSenha(texto)}
+        onChangeText={texto => this.props.modificaSenha(texto)}
         secureTextEntry
         placeholderTextColor="green"
       />
@@ -38,7 +40,10 @@ const FormCadastro = props => (
       <Button title="Cadastrar" color="#115E54" onPress={() => false} />
     </View>
   </View>
-);
+    );
+  }
+}
+
 
 const mapStateToProps = state => ({
   nome: state.AutenticacaoReducer.nome,
