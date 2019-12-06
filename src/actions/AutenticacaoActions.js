@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 export const modificaEmail = texto => {
   return {
     type: "modifica_email",
