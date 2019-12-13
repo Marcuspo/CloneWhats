@@ -58,5 +58,10 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 
+<<<<<<< HEAD
 # Utils
 /src/utils/Firebase.js
+=======
+#firebase
+src/utils/Firebase.js
+>>>>>>> 5c81971170a9c9f5709d18af00da87eab370404b

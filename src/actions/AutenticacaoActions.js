@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 export const modificaEmail = texto => {
   return {
     type: "modifica_email",
@@ -16,5 +18,11 @@ export const modificaNome = texto => {
   return {
     type: "modifica_nome",
     payload: texto
+  };
+};
+
+export const cadastraUsuario = ({ nome, email, senha }) => {
+  return {
+    action: "teste"
   };
 };
