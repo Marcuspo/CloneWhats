@@ -1,4 +1,4 @@
-import firebase from '../utils/Firebase';
+import firebase from "../utils/Firebase";
 
 export const modificaEmail = texto => {
   return {
@@ -22,12 +22,21 @@ export const modificaNome = texto => {
 };
 
 export const cadastraUsuario = ({ nome, email, senha }) => {
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, senha)
+    .then(user => cadastraUsuarioSucesso)
+    .catch(erro => cadastraUsuarioErro(erro));
+};
 
-  firebase.auth().createUserWithEmailAndPassword(email, senha)
-  .then(user => console.log(user))
-  .catch(erro => console.log(erro));
-
+const cadastraUsuarioSucesso = () => {
   return {
-    action: "teste"
+    type: "sucesso"
+  };
+};
+
+const cadastraUsuarioErro = erro => {
+  return {
+    type: "erro"
   };
 };
